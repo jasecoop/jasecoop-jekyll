@@ -13,9 +13,6 @@
     <meta name="author" content="{{ site.name }}" />
     <meta name="description" content="{{ description }}" />
 
-    <meta property="twitter:card"    content="summary" />
-    <meta property="twitter:creator" content="@jbhannah" />
-    <meta property="og:url"          content="{{ site.url }}{% unless page.url == '/index.html' %}{{ page.url }}{% endunless %}" />
     <meta property="og:title"        content="{% if page.title %}{{ page.title }}{% else %}{{ site.name }}{% endif %}" />
     <meta property="og:description"  content="{{ description }}" />
     <meta property="st:title"        content="{% if page.title %}{{ page.title }}{% else %}{{ site.name }}{% endif %}" />
@@ -24,91 +21,19 @@
 
     <link href="/favicon.ico" rel="shortcut icon" type="image/vnd.microsoft.icon" />
 
-    <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic" />
-    <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Droid+Sans+Mono" />
-    {% stylesheet app %}
-    <link rel="alternate" type="application/atom+xml" title="Blog Atom feed" href="{{ site.url }}/blog/atom.xml" />
+    {% css_asset_tag global %}
+    - /_assets/css/site.css.scss
+    {% endcss_asset_tag %}
 
-    {% javascript vendor/custom.modernizr.js %}
-    <script type="text/javascript">
-      var disqus_shortname = 'jbhannah{% if site.dev == true %}-devel{% endif %}';
+    {% javascript_asset_tag global %}
+    - /_assets/js/scripts.js
+    {% endjavascript_asset_tag %}
 
-      {% unless site.dev == true %}
-      var _gaq = _gaq || [];
-      _gaq.push(['_setAccount', 'UA-34516698-1']);
-      _gaq.push(['_trackPageview']);
-
-      (function() {
-        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-      })();
-      {% endunless %}
-    </script>
   </head>
 
-  <body{% if page.body_class %} class="{{ page.body_class }}"{% endif %}>
-    <div id="fb-root"></div>
+  <body>
 
-    <div id="root">
-      <div id="root_header"></div>
+    {{ content }}
 
-      <div id="main">
-        <header id="header">
-          <div id="avatar"><a href="{{ site.url }}"></a></div>
-
-          <div id="site-title">
-            <h1><a href="{{ site.url }}">{{ site.name }}</a></h1>
-            <h2>{{ site.nickname }}</h2>
-          </div>
-        </header>
-
-        <nav id="menu">
-          <nav id="social-menu">
-            <ul>
-              {% for s in site.social %}
-                <li id="{{ s.abbr }}"><a class="social-icon" href="{{ s.url }}{% if s.abbr == 'gplus' and page.date %}?rel=author{% endif %}"></a></li>
-              {% endfor %}
-            </ul>
-          </nav>
-
-          <nav id="site-menu">
-            <ul>
-              <li><a href="/blog">Blog</a></li>
-              <li><a href="/resume" rel="external">Résumé</a></li>
-              <li><a href="#search">Search</a></li>
-            </ul>
-          </nav>
-
-          <nav id="search">
-            <form>
-              <input type="search" placeholder="Search" id="st-search-input" />
-            </form>
-            <a href="#site-menu">Close</a>
-          </nav>
-        </nav>
-
-        <div id="st-results-container">Type your query and hit enter. Results will appear here.</div>
-
-        <section id="content" data-swiftype-index="true">
-          {{ content }}
-        </section>
-      </div>
-
-      <div id="root_footer"></div>
-    </div>
-
-    <footer id="footer"><p>
-      Copyright © {{ site.time | date: "%Y" }}
-      <span id="name"{% if page.body_class == 'index' %} itemprop="name"{% endif %}>
-        <a{% if page.body_class == 'index' %} itemprop="url"{% endif %} href="{{ site.url }}">{{ site.name }}</a></span>.
-      <a href="http://creativecommons.org/licenses/by-nc-sa/3.0/" rel="license">Some Rights Reserved</a>.<br />
-      Powered by <a href="http://www.heroku.com/">Heroku</a>, <a href="http://swiftype.com?ref=pb">Swiftype</a>,
-      <a href="http://jekyllrb.com/">Jekyll</a>, and <a href="https://github.com/jbhannah/jbhannah.net">GitHub</a>.
-    </p></footer>
-
-    <script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-    {% javascript app %}
   </body>
 </html>
