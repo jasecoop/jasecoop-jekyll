@@ -1,6 +1,6 @@
 # Jasecoop Jekyll
 
-This Jekyll site is stripped down to allow for quick setup on a new Jekyll project that requires use of Heroku and the asset-pipeline. It is based on [jbhannah](https://github.com/jbhannah/) blog [post][http://jbhannah.net/blog/2013/01/16/jekyll-on-heroku-without-rack-jekyll-or-custom-buildpacks.html] on compiling for Heroku. It'll allow for a simple push to Heroku and you'll be up and running.
+This Jekyll site is stripped down to allow for quick setup on a new Jekyll project that requires use of Heroku and the asset-pipeline. It is based on [jbhannah blog post] on compiling for Heroku. It'll allow for a simple push to Heroku and you'll be up and running.
 
 
 ## Asset Pipeline
@@ -20,6 +20,7 @@ except for plugins that specify other licensing terms. The content as
 compiled and displayed at [jbhannah.net][] is licensed under [Creative
 Commons BY-NC-SA 3.0][CC BY-NC-SA].
 
+[jbhannah blog post]: http://jbhannah.net/blog/2013/01/16/jekyll-on-heroku-without-rack-jekyll-or-custom-buildpacks.html
 [compiled]: http://jbhannah.net/blog/2013/01/16/jekyll-on-heroku-without-rack-jekyll-or-custom-buildpacks.html
 [Jekyll]: http://jekyllrb.com/
 [Heroku]: http://www.heroku.com/
