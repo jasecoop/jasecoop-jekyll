@@ -1,8 +1,11 @@
-# jbhannah.net
+# Jasecoop Jekyll
 
-[![Dependency Status](https://gemnasium.com/jbhannah/jbhannah.net.png)](https://gemnasium.com/jbhannah/jbhannah.net)
+This Jekyll site is stripped down to allow for quick setup on a new Jekyll project that requires use of Heroku and the asset-pipeline. It is based on [jbhannah](https://github.com/jbhannah/) blog [post][http://jbhannah.net/blog/2013/01/16/jekyll-on-heroku-without-rack-jekyll-or-custom-buildpacks.html] on compiling for Heroku. It'll allow for a simple push to Heroku and you'll be up and running.
 
-Homepage and weblog of Jesse B. Hannah.
+
+## Asset Pipeline
+For more details on the asset-pipeline and setup see:
+https://github.com/matthodan/jekyll-asset-pipeline
 
 ## Deployment
 
